@@ -122,14 +122,30 @@ var checkbox = document.querySelector(".checkbox");
 checkbox.addEventListener('change', function () {
   var result = document.querySelector(".result");
   var container = document.querySelector(".container");
+  var operation = document.querySelector(".operation");
+  var boutons = document.querySelectorAll(".bouton");
 
   if (this.checked) {
+    // DARKMODE
     container.style.backgroundColor = "#2D2D2D";
     result.style.color = "white";
+    operation.style.color = "#8692FF";
+
+    for (var i = 0; i < boutons.length; i++) {
+      boutons[i].classList.remove("light");
+      boutons[i].classList.add("dark");
+    }
   } else {
-    // Checkbox is not checked..#F9F8F8
+    //LIGHTMODE
     container.style.backgroundColor = "#F9F8F8";
     result.style.color = "black";
+    operation.style.color = "#FF6B00";
+
+    for (var _i = 0; _i < boutons.length; _i++) {
+      boutons[_i].classList.remove("dark");
+
+      boutons[_i].classList.add("light");
+    }
   }
 });
 },{}],"../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -160,7 +176,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61458" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49565" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
